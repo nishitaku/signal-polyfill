@@ -1,0 +1,23 @@
+{
+  "name": "signal-polyfill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishitaku/signal-polyfill.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nishitaku/signal-polyfill/issues"
+  },
+  "homepage": "https://github.com/nishitaku/signal-polyfill#readme",
+  "dependencies": {
+    "signal-polyfill": "^0.2.2"
+  }
+}
