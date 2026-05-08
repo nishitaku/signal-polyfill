@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      import { Signal } from "https://cdn.jsdelivr.net/npm/signal-polyfill/+esm";
+
+      const el = document.getElementById("app");
+
+      const count = new Signal.State(0);
+
+      const double = new Signal.Computed(() => {
+        console.log("double 再計算");
+        return count.get() * 2;
+      });
+
+      const watcher = new Signal.subtle.Watcher(async () => {
+        await 0;
+        el.textContent = "double: " + double.get();
+        watcher.watch(double);
+      });
+
+      // 👇 超重要：初回実行
+      el.textContent = "double: " + double.get();
+
+      watcher.watch(double);
+
+      // 👇 更新
+      setInterval(() => {
+        count.set(count.get() + 1);
+      }, 1000);
+    </script>
+  </body>
+</html>
